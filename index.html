@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<style type="text/css">
+		.game{
+			height: 927px;
+			background-image: url(8ea241e96504a398f291a31939963e8ba948368c.jpg);
+			background-size: 100% 100%;
+		}
+		.list{
+			height: 300px;
+			width: 175px;
+			background: #29374B;
+		}
+		.apple{
+			position: absolute;
+			top: 600px;
+			left: 1500px;
+			height: 15px;
+		}
+		.leaf{
+			position: absolute;
+			top: 500px;
+			left: 700px;
+			height: 5px;
+		}
+		.man{
+			position: absolute;
+			top: 427px;
+			left: 1440px;
+			height: 50px;
+			opacity: 50%;
+		}
+		.lamp{
+			position: absolute;
+			top: 372px;
+			left: 900px;
+			height: 41px;
+			opacity: 90%;
+		}
+		.bird{
+			position: absolute;
+			top: 190px;
+			left: 600px;
+			height: 21px;
+		}
+		.fb{
+			position: absolute;
+			top: 750px;
+			left: 800px;
+			height: 50px;
+		}
+		.bush{
+			position: absolute;
+			top: 600px;
+			left: 200px;
+			height: 300px;
+		}
+		.dog{
+			position: absolute;
+			top: 650px;
+			left: 1200px;
+			height: 115px;
+		}
+		.vis{
+
+		}
+		.vis1{
+
+		}
+		.vis2{
+
+		}
+		.vis3{
+
+		}
+		.blank{
+			display: none;
+		}
+		.blank1{
+			display: none;
+		}
+		.blank2{
+			display: none;
+		}
+		.blank3{
+			display: none;
+		}
+		.end{
+			height: 550px;
+			width: 1000px;
+			background: #29374B;
+			position: absolute;
+			top: 100px;
+			left: 450px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="game">\
+		<div class="list border-top border-end border-bottom border-warning rounded-start rounded-5 border-5 text-warning">
+			<h1 class="vis">листик</h1>
+			<h1 class="blank"><s>листик</s></h1>
+			<h1 class="vis1">яблоко</h1>
+			<h1 class="blank1"><s>яблоко</s></h1>
+			<h1 class="vis2">человек</h1>
+			<h1 class="blank2"><s>человек</s></h1>
+			<h1 class="vis3">лампа</h1>
+			<h1 class="blank3"><s>лампа</s></h1>
+			<h1>ОЧКИ: <span class="score"></span></h1>
+		</div>
+		<div class="end border border-warning rounded rounded-5 border-5 text-warning text-center pt-5">
+			<h1>Вы победили!!!</h1>
+		</div>
+		<img src="pngtree-real-apple-fruit-icon-clipart-png-image_6259244.png" class="apple">
+		<img src="Green_Leaves_PNG_Transparent_Image.png" class="leaf">
+		<img src="rTkJ7v-man-png-imageb.png" class="man">
+		<img src="8ea241e96504a398f291a31939963e8ba948368d.jpg" class="lamp">
+		<img src="picsart-birds-png-impremedia-25.png" class="bird">
+		<img src="Football_PNG_Transparent_Clip_Art_Image.png" class="fb">
+		<img src="pngtree-bush-tree-png-image_6515109.png" class="bush">
+		<img src="8fefaa44f99928585b65d34e05556590.png" class="dog">
+	</div>
+
+	<script type="text/javascript">
+		let score = 0;
+		document.querySelector(".score").innerHTML = score;
+		document.querySelector(".leaf").onclick = function(){
+			score = score+1;
+			document.querySelector(".score").innerHTML = score;
+			document.querySelector(".leaf").src = "";
+			document.querySelector(".vis").style.display = "none";
+			document.querySelector(".blank").style.display = "block";
+			alert("листик");
+			if (score == 4) {
+				document.querySelector(".bird").src = "";
+				document.querySelector(".end").style.display = "block";
+			}
+		}
+		document.querySelector(".apple").onclick = function(){
+			score = score+1;
+			document.querySelector(".score").innerHTML = score;
+			document.querySelector(".apple").src = "";
+			document.querySelector(".vis1").style.display = "none";
+			document.querySelector(".blank1").style.display = "block";
+			alert("яблоко");
+			if (score == 4) {
+				document.querySelector(".bird").src = "";
+				document.querySelector(".end").style.display = "block";
+			}
+		}
+		document.querySelector(".man").onclick = function(){
+			score = score+1;
+			document.querySelector(".score").innerHTML = score;
+			document.querySelector(".man").src = "";
+			document.querySelector(".vis2").style.display = "none";
+			document.querySelector(".blank2").style.display = "block";
+			alert("человек");
+			if (score == 4) {
+				document.querySelector(".bird").src = "";
+				document.querySelector(".end").style.display = "block";
+			}
+		}
+		document.querySelector(".lamp").onclick = function(){
+			score = score+1;
+			document.querySelector(".score").innerHTML = score;
+			document.querySelector(".lamp").src = "";
+			document.querySelector(".vis3").style.display = "none";
+			document.querySelector(".blank3").style.display = "block";
+			alert("лампа");
+			if (score == 4) {
+				document.querySelector(".bird").src = "";
+				document.querySelector(".end").style.display = "block";
+			}
+		}
+	</script>
+</body>
+</html>
